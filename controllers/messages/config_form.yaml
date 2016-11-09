@@ -1,0 +1,10 @@
+name: Messages
+form: $/travis/contact/models/message/fields.yaml
+modelClass: Travis\Contact\Models\Message
+defaultRedirect: travis/contact/messages
+create:
+    redirect: 'travis/contact/messages/update/:id'
+    redirectClose: travis/contact/messages
+update:
+    redirect: travis/contact/messages
+    redirectClose: travis/contact/messages

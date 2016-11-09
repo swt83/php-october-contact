@@ -1,0 +1,5 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table travis_contact_messages'
+    - builder_table_create_travis_contact_messages.php

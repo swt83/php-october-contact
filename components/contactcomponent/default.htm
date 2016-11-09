@@ -1,0 +1,34 @@
+<div class="travis-contact-form">
+    {{ form_open() }}
+    {% if (alert.msg) %}
+        <div class="alert {{ alert.level }}">
+            <ul>
+            {% for m in alert.msg %}
+                <li>{{ m }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    {{ form_label('first', 'First *') }}
+    {{ form_text('first', input.first) }}
+    {{ form_label('last', 'Last *') }}
+    {{ form_text('last', input.last) }}
+    {{ form_label('email', 'Email *') }}
+    {{ form_text('email', input.email) }}
+    {{ form_label('subject', 'Subject *') }}
+    {{ form_text('subject', input.subject) }}
+    {% if (properties.is_allow_important) %}
+        <div class="is-important">
+            {{ form_checkbox('is_important', input.is_important) }} {{ properties.important_description }}
+        </div>
+    {% endif %}
+    {{ form_label('contact_message', 'Message *') }}
+    {{ form_textarea('contact_message', input.contact_message) }}
+    {% if (settings.is_recaptcha) %}
+        <div class="recaptcha">
+            <div class="g-recaptcha" data-sitekey="{{ settings.recaptcha_public_key }}" data-theme="{{ settings.recaptcha_theme ? settings.recaptcha_theme : 'light' }}"></div>
+        </div>
+    {% endif %}
+    {{ form_submit(properties.button) }}
+    {{ form_close() }}
+</div>

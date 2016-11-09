@@ -1,0 +1,10 @@
+name: Settings
+form: $/travis/contact/models/settings/fields.yaml
+modelClass: Travis\Contact\Models\Settings
+defaultRedirect: travis/contact/settings
+create:
+    redirect: 'travis/contact/settings/update/:id'
+    redirectClose: travis/contact/settings
+update:
+    redirect: travis/contact/settings
+    redirectClose: travis/contact/settings

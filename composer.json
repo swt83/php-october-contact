@@ -1,0 +1,35 @@
+{
+    "name": "travis/contact",
+    "type": "october-plugin",
+    "description": "An OctoberCMS plugin for adding a contact form to your website.",
+    "homepage": "https://github.com/swt83/php-october-contact",
+    "keywords": ["october", "octobercms", "travis", "contact"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Scott Travis",
+            "email": "scott.w.travis@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:swt83/php-october-reformed.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:swt83/php-ex.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:swt83/php-recaptcha.git"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "travis/reformed_for_october": "dev-master",
+        "travis/ex": "dev-master",
+        "travis/recaptcha": "dev-master"
+    },
+    "minimum-stability": "dev"
+}

@@ -1,0 +1,31 @@
+fields:
+    recipient_email:
+        label: 'Recipient Email'
+        span: full
+        required: 1
+        type: text
+        comment: 'Who should the messages be sent to?'
+    is_recaptcha:
+        label: 'Add reCAPTCHA protection?'
+        span: full
+        type: switch
+        comment: 'This setting will add a special "are you a human" question at the end of the contact form.  This provides extra protection against spam.'
+    recaptcha_public_key:
+        label: 'reCAPTCHA Public Key'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    recaptcha_secret_key:
+        label: 'reCAPTCHA Secret Key'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    recaptcha_theme:
+        label: 'reCAPTCHA Theme'
+        span: full
+        oc.commentPosition: ''
+        default: light
+        options:
+            light: Light
+            dark: Dark
+        type: dropdown

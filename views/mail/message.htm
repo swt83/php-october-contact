@@ -1,0 +1,17 @@
+subject = "Message From the Contact Form"
+==
+<pre>
+FIRST: {{ first }}
+LAST:  {{ last }}
+EMAIL: {{ email }}
+
+-------
+
+{{ contact_message }}
+
+-------
+
+{% if (is_important) %}
+	THIS MESSAGE WAS FLAGGED AS IMPORTANT.
+{% endif %}
+</pre>

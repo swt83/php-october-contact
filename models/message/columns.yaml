@@ -1,0 +1,30 @@
+columns:
+    created_at:
+        label: Date
+        type: date
+        searchable: true
+        sortable: true
+    first:
+        label: First
+        type: text
+        searchable: true
+        sortable: true
+    last:
+        label: Last
+        type: text
+        searchable: true
+        sortable: true
+    email:
+        label: From
+        type: text
+        searchable: true
+        sortable: true
+    subject:
+        label: Subject
+        type: text
+        searchable: true
+        sortable: true
+    is_important:
+        label: Important
+        type: number
+        sortable: true

@@ -1,0 +1,25 @@
+plugin:
+    name: 'travis.contact::lang.plugin.name'
+    description: 'travis.contact::lang.plugin.description'
+    author: 'Scott Travis'
+    icon: oc-icon-envelope-square
+    homepage: 'https://github.com/swt83/php-october-contact'
+navigation:
+    contact:
+        label: Contact
+        url: travis/contact/messages
+        icon: icon-envelope-o
+        iconSvg: 'plugins/travis/contact/assets/img/icon.png'
+        permissions:
+            - travis.contact.manage_contact
+        sideMenu:
+            messages:
+                label: Messages
+                url: travis/contact/messages
+                icon: icon-list
+                permissions:
+                    - travis.contact.manage_contact
+permissions:
+    travis.contact.manage_contact:
+        tab: 'travis.contact::lang.plugin.name'
+        label: 'Manage Contact'
