@@ -62,11 +62,11 @@ class ContactForm extends Reformed
 			static::set_alert('Message sent.', 'green');
 
 			// return
-			return \Redirect::to(\URL::current());
+			return \Redirect::to(\URL::current().'#submit');
 		}
 
 		// return w/ errors
-		return \Redirect::to(\URL::current())->withInput();
+		return \Redirect::to(\URL::current().'#submit')->withInput();
 	}
 
 	protected static function send($settings, $input)

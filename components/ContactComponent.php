@@ -64,14 +64,16 @@ class ContactComponent extends ComponentBase
         }
 
         // bind
-        $this->page['input'] = ContactForm::all();
-        $this->page['alert'] = ContactForm::get_alert();
-        $this->page['settings'] = $settings;
+        $this->page['contact'] = [
+            'input' => ContactForm::all(),
+            'alert' => ContactForm::get_alert(),
+            'settings' => $settings,
+        ];
     }
 
     public function onRender()
     {
         // bind
-        $this->page['properties'] = $this->getProperties(); // auto-cached
+        $this->page['contact'] = array_merge($this->page['contact'], ['properties' => $this->getProperties()]); // auto-cached
     }
 }

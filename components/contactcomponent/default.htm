@@ -1,32 +1,33 @@
+<div id="submit"></div>
 <div class="travis-contact-form">
     {{ form_open() }}
-    {% if (alert.msg) %}
-        <div class="alert {{ alert.level }}">
+    {% if (contact.alert.msg) %}
+        <div class="alert {{ contact.alert.level }}">
             <ul>
-            {% for m in alert.msg %}
+            {% for m in contact.alert.msg %}
                 <li>{{ m }}</li>
             {% endfor %}
             </ul>
         </div>
     {% endif %}
     {{ form_label('first', 'First *') }}
-    {{ form_text('first', input.first) }}
+    {{ form_text('first', contact.input.first) }}
     {{ form_label('last', 'Last *') }}
-    {{ form_text('last', input.last) }}
+    {{ form_text('last', contact.input.last) }}
     {{ form_label('email', 'Email *') }}
-    {{ form_text('email', input.email) }}
+    {{ form_text('email', contact.input.email) }}
     {{ form_label('subject', 'Subject *') }}
-    {{ form_text('subject', input.subject) }}
+    {{ form_text('subject', contact.input.subject) }}
     {% if (properties.is_allow_important) %}
         <div class="is-important">
-            {{ form_checkbox('is_important', input.is_important) }} {{ properties.important_description }}
+            {{ form_checkbox('is_important', contact.input.is_important) }} {{ properties.important_description }}
         </div>
     {% endif %}
-    {{ form_label('contact_message', 'Message *') }}
-    {{ form_textarea('contact_message', input.contact_message) }}
-    {% if (settings.is_recaptcha) %}
+    {{ form_label('contact.message', 'Message *') }}
+    {{ form_textarea('contact.message', contact.input.contact.message) }}
+    {% if (contact.settings.is_recaptcha) %}
         <div class="recaptcha">
-            <div class="g-recaptcha" data-sitekey="{{ settings.recaptcha_public_key }}" data-theme="{{ settings.recaptcha_theme ? settings.recaptcha_theme : 'light' }}"></div>
+            <div class="g-recaptcha" data-sitekey="{{ contact.settings.recaptcha_public_key }}" data-theme="{{ contact.settings.recaptcha_theme ? contact.settings.recaptcha_theme : 'light' }}"></div>
         </div>
     {% endif %}
     {{ form_submit(properties.button) }}
