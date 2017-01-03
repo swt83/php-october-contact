@@ -1,6 +1,7 @@
 <div id="submit"></div>
 <div class="travis-contact-form">
     {{ form_open() }}
+    {{ form_hidden('plugin', 'contact') }}
     {% if (contact.alert.msg) %}
         <div class="alert {{ contact.alert.level }}">
             <ul>

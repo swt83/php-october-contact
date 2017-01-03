@@ -50,7 +50,7 @@ class ContactComponent extends ComponentBase
                 ->toArray(); // auto-cached
 
         // if post...
-        if (\Request::isMethod('post'))
+        if (\Request::isMethod('post') and \Input::get('plugin') == 'contact')
         {
             // redirect
             return ContactForm::run($settings);
