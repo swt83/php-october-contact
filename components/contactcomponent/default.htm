@@ -19,9 +19,9 @@
     {{ form_text('email', contact.input.email) }}
     {{ form_label('subject', 'Subject *') }}
     {{ form_text('subject', contact.input.subject) }}
-    {% if (properties.is_allow_important) %}
+    {% if (__SELF__.properties.is_allow_important) %}
         <div class="is-important">
-            {{ form_checkbox('is_important', contact.input.is_important) }} {{ properties.important_description }}
+            {{ form_checkbox('is_important', contact.input.is_important) }} {{ __SELF__.properties.important_description }}
         </div>
     {% endif %}
     {{ form_label('contact.message', 'Message *') }}
@@ -31,6 +31,6 @@
             <div class="g-recaptcha" data-sitekey="{{ contact.settings.recaptcha_public_key }}" data-theme="{{ contact.settings.recaptcha_theme ? contact.settings.recaptcha_theme : 'light' }}"></div>
         </div>
     {% endif %}
-    {{ form_submit(properties.button) }}
+    {{ form_submit(__SELF__.properties.button) }}
     {{ form_close() }}
 </div>
